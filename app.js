@@ -9,6 +9,7 @@ var webpackHotMiddleware = require('webpack-hot-middleware');
 var webpack = require('webpack');
 var config = require('./webpack.config');
 var fs = require('fs');
+var compression = require('compression');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -43,6 +44,7 @@ app.use(webpackHotMiddleware(webpack(config)));*/
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
