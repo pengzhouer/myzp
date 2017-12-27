@@ -3,7 +3,6 @@
  */
 import React, {Component} from 'react';
 import PlayerCon from './container/playCon';
-import { BrowserRouter, Route, Redirect, Switch, Link} from 'react-router-dom';
 import AppCon from './container/appCon'
 
 
@@ -19,13 +18,9 @@ class Root extends Component{
     }
     render(){
         return (
-                <BrowserRouter>
                     <AppCon>
-                        <Switch>
-                            <Route path="/" component={PlayerCon}></Route>
-                        </Switch>
+                        <PlayerCon></PlayerCon>
                     </AppCon>
-                </BrowserRouter>
         )
     }
 }
